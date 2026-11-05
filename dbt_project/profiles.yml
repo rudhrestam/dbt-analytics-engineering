@@ -1,0 +1,8 @@
+restaurant_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('WAREHOUSE_PATH', 'warehouse.duckdb') }}"
+      schema: analytics
+      threads: 4
