@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: int_order_lines
+    description: "Order lines enriched with order and product context"
+    columns:
+      - name: item_id
+        tests: [unique, not_null]
+
+  - name: fct_daily_revenue
+    description: "Daily revenue by channel, completed orders only"
+    columns:
+      - name: order_date
+        tests: [not_null]
+      - name: revenue
+        tests: [not_null]
+
+  - name: dim_customers
+    description: "Customer dimension with lifetime summary and segment"
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+      - name: customer_segment
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['regular', 'occasional', 'one_time', 'never_ordered']
+
+  - name: mart_data_quality
+    description: "Data-quality check results over the staged data"
+    columns:
+      - name: check_name
+        tests: [unique, not_null]
+      - name: failed_records
+        tests: [not_null]
