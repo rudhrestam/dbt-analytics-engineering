@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: "Synthetic raw feeds, loaded by generate_raw_data.py"
+    database: warehouse
+    schema: raw_data
+    tables:
+      - name: raw_customers
+      - name: raw_products
+      - name: raw_orders
+      - name: raw_order_items
