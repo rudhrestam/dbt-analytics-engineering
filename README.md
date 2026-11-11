@@ -1,5 +1,7 @@
 # dbt Analytics Engineering (Demo)
 
+![CI](https://github.com/rudhrestam/dbt-analytics-engineering/actions/workflows/ci.yml/badge.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 A complete, runnable dbt project: synthetic raw restaurant sales data in DuckDB, modelled staging → intermediate → marts, with schema tests on every layer and a data-quality mart that catches the defects planted in the raw feed.
 
 > ⚠️ **Synthetic data only.** A generator script creates the raw tables with a fixed seed. No real business data — anyone's — is used.
@@ -69,7 +71,7 @@ The warehouse file defaults to `dbt_project/warehouse.duckdb`; set `WAREHOUSE_PA
 
 ## Tech stack
 
-dbt Core · dbt-duckdb · DuckDB · Python (data generator)
+dbt Core · dbt-duckdb · DuckDB · Python 3.10+ (data generator)
 
 ## What it demonstrates
 
